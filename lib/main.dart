@@ -21,6 +21,10 @@ class myHomePage extends StatefulWidget {
     debugPrint("Count Degistirildi");
     count++;
   }
+  void Count2() {
+    debugPrint("Count Degistirildi");
+    count--;
+  }
 
   //StateFull alaninin cache alani denebilir.
   @override
@@ -64,13 +68,29 @@ class MyHomePage extends State<myHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              RaisedButton(
+                onPressed: () {
+                 setState(() {
+                   widget.Count2();
+                 });
+                },
+                child: Text("Azalt"),
+              ),
               Text("Click time for Button : "),
               Text(
                 "${widget.count}",
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-              )
+                style: Theme.of(context).textTheme.display1.copyWith(//copyWith varolan theme icindeki textstyle ozelliklerini ezebiliriz.
+                  color: widget.count < 0 ? Colors.red : Colors.blueAccent, //Kisa if kullanim sekli
+                )
+              ),
+              RaisedButton(
+                onPressed: () {
+                 setState(() {
+                   widget.Count();
+                 });
+                },
+                child: Text("Cogalt"),
+              ),
             ],
           ),
         ),
