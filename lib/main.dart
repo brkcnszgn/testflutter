@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/listview/listview_sperator_builder.dart';
 
+import 'ListView_kullanici_dostu.dart';
 import 'listView.dart';
 
 void main() {
@@ -13,7 +15,7 @@ void main() {
       appBar: AppBar(
         title: Text("Flutter Dersleri Devam ListView"),
       ),
-      body: ListViews(),
+      body: ListView_Seperator(),
     ),
   ));
 }
