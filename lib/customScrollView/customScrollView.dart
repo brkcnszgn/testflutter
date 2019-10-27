@@ -45,11 +45,41 @@ class customScrollView extends StatelessWidget {
         SliverFixedExtentList(
             delegate: SliverChildListDelegate(sabitListElemanlari()),
             itemExtent: 200),
+        //dinamik yuklenen listViewler
         SliverFixedExtentList(
-          delegate: SliverChildBuilderDelegate(_dinamikFonsksiyon, childCount: 50),
+          //delegate listenin elemanlarini bekler
+          delegate:
+              SliverChildBuilderDelegate(_dinamikFonsksiyon, childCount: 50),
           itemExtent: 50,
         ),
-//        SliverGrid()
+        SliverGrid(
+          //sabit elemanlarla olusturulan grid
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          delegate: SliverChildListDelegate(sabitListElemanlari()),
+        ),
+        //dinamik elemanlarla olusturulan
+        SliverGrid(
+          delegate:
+              SliverChildBuilderDelegate(_dinamikFonsksiyon, childCount: 12),
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        ),
+        SliverGrid(
+          //dinamik elemanlarla olusturulup maximum genisligini bilgisi yer alir
+          gridDelegate:
+              SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 200),
+          delegate:
+              SliverChildBuilderDelegate(_dinamikFonsksiyon, childCount: 12),
+        ),
+        SliverGrid.count(
+          crossAxisCount: 4,
+          children: sabitListElemanlari(),
+        ),
+        SliverGrid.extent(
+          maxCrossAxisExtent: 300,
+          children: sabitListElemanlari(),
+        ),
       ],
     );
   }
