@@ -86,7 +86,7 @@ class NavigatorPush extends StatelessWidget {
             RaisedButton(
               onPressed: () {
                 // Bu navigator ozelligi geri tusuna basildiginda uygulama kapanir.
-                  Navigator.pushReplacement(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => EPage(),
@@ -99,8 +99,90 @@ class NavigatorPush extends StatelessWidget {
               ),
               color: Colors.pink,
             ),
+            RaisedButton(
+              onPressed: () {
+                // Bu navigator ozelligi geri tusuna basildiginda uygulama kapanir.
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LisPage(),
+                  ),
+                );
+              },
+              child: Center(
+                child: Text(
+                  "List git ve geri geleme",
+                  style: TextStyle(color: Colors.black87),
+                ),
+              ),
+              color: Colors.pink,
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class ListDetail extends StatelessWidget {
+
+  int clickForPosition = 0;
+  ListDetail(this.clickForPosition);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Liste Detay Sayfasi",
+          style: TextStyle(fontSize: 16, color: Colors.black87),
+        ),
+      ),
+      body:
+      Container(
+        color: Colors.orange,
+        height: 250,
+        child:  Center(child: Text("Listedeki  $clickForPosition  elemanina tiklandi")),
+        margin: EdgeInsets.all(5),
+      ),
+    );
+  }
+}
+
+class LisPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Liste Sayfasi",
+          style: TextStyle(fontSize: 16, color: Colors.black87),
+        ),
+      ),
+      body: ListView.builder(
+        itemBuilder: (BuildContext context, int position) {
+          //Liste icerisindeki elemanin pozisyonuna gore click alabiliriz
+          return GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/listDetail/$position');
+              //Normal rota
+//              Navigator.push(
+//                context,
+//                MaterialPageRoute(
+//                  builder: (context) => ListDetail(position),
+//                ),
+//              );
+            },
+            child: Container(
+              color: Colors.orange,
+              child: Center(child: Text("Liste elemani $position")),
+              height: 100,
+              width: 200,
+              margin: EdgeInsets.all(5),
+            ),
+          );
+        },
+        itemCount: 30,
       ),
     );
   }
@@ -233,6 +315,7 @@ class BPage extends StatelessWidget {
   }
 }
 
+//pushNamed
 class CPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -264,20 +347,18 @@ class CPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push((context),
                     MaterialPageRoute(builder: (context) => APage()));
-
-
               },
             ),
-         RaisedButton(
+            RaisedButton(
               color: Colors.orange,
               child: Text("B sayfasina git"),
               onPressed: () {
 //                Navigator.push((context),
 //                    MaterialPageRoute(builder: (context) => APage()));
-              //isim ile rota olusturma
+                //isim ile rota olusturma
                 Navigator.pushNamed(context, '/Bpage');
                 //Navigator.pushReplacementNamed() geldigi sayfayi yok sayar bir oncekine doner javada ki Finish methodu gibi
-              //  Navigator.pushReplacementNamed(context, '/Bpage');
+                //  Navigator.pushReplacementNamed(context, '/Bpage');
               },
             ),
           ],
