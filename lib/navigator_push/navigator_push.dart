@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/form_islemleri/form_islemleri.dart';
 
 class NavigatorPush extends StatelessWidget {
   String baslik = "B sayfasindan gelen String deger";
@@ -12,7 +13,7 @@ class NavigatorPush extends StatelessWidget {
           style: TextStyle(fontSize: 16, color: Colors.black87),
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -112,6 +113,21 @@ class NavigatorPush extends StatelessWidget {
               child: Center(
                 child: Text(
                   "List git ve geri geleme",
+                  style: TextStyle(color: Colors.black87),
+                ),
+              ),
+              color: Colors.pink,
+            ),
+          RaisedButton(
+              onPressed: () {
+                // Bu navigator ozelligi geri tusuna basildiginda uygulama kapanir.
+                Navigator.pushNamed(context, "/formInput"
+
+                );
+              },
+              child: Center(
+                child: Text(
+                  "Input Forma git",
                   style: TextStyle(color: Colors.black87),
                 ),
               ),
