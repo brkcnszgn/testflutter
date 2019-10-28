@@ -3,7 +3,9 @@ import 'package:testflutter/customScrollView/customScrollView.dart';
 import 'package:testflutter/listview/listview_sperator_builder.dart';
 
 import 'ListView_kullanici_dostu.dart';
-import 'form_islemleri/form_islemleri.dart';
+
+import 'form_islemleri/form_text_field.dart';
+import 'form_islemleri/input_field.dart';
 import 'girdView/grid_view.dart';
 import 'listView.dart';
 import 'navigator_push/navigator_push.dart';
@@ -24,7 +26,8 @@ void main() {
         '/Cpage/Dpage': (context) => DPage(),
         '/CPage/DPage/APage': (context) => APage(),
         '/listPage': (context) => LisPage(),
-        '/formInput': (context)=> FormIslemleri(),
+        '/formInput': (context)=> TextFieldIslemleri(),
+        '/formTextField': (context)=> FormTextField_(),
 //        '/listDetail/$clickForPosition':(context)=>ListDetail(clickForPosition),
       },
 

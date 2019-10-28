@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testflutter/form_islemleri/form_islemleri.dart';
+
 
 class NavigatorPush extends StatelessWidget {
   String baslik = "B sayfasindan gelen String deger";
@@ -132,6 +132,21 @@ class NavigatorPush extends StatelessWidget {
                 ),
               ),
               color: Colors.pink,
+            ),
+           RaisedButton(
+              onPressed: () {
+                // Bu navigator ozelligi geri tusuna basildiginda uygulama kapanir.
+                Navigator.pushNamed(context, "/formTextField"
+
+                );
+              },
+              child: Center(
+                child: Text(
+                  "TextField Forma git",
+                  style: TextStyle(color: Colors.black87),
+                ),
+              ),
+              color: Colors.orange,
             ),
           ],
         ),
