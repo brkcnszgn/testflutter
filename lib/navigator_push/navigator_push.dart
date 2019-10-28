@@ -148,6 +148,21 @@ class NavigatorPush extends StatelessWidget {
               ),
               color: Colors.orange,
             ),
+           RaisedButton(
+              onPressed: () {
+                // Bu navigator ozelligi geri tusuna basildiginda uygulama kapanir.
+                Navigator.pushNamed(context, "/anotherFormObjectElement"
+
+                );
+              },
+              child: Center(
+                child: Text(
+                  "Diger  Form elemanlarina git",
+                  style: TextStyle(color: Colors.black87),
+                ),
+              ),
+              color: Colors.orange,
+            ),
           ],
         ),
       ),

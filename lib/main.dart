@@ -4,6 +4,7 @@ import 'package:testflutter/listview/listview_sperator_builder.dart';
 
 import 'ListView_kullanici_dostu.dart';
 
+import 'form_islemleri/anotherFormObjectElement.dart';
 import 'form_islemleri/form_text_field.dart';
 import 'form_islemleri/input_field.dart';
 import 'girdView/grid_view.dart';
@@ -28,6 +29,7 @@ void main() {
         '/listPage': (context) => LisPage(),
         '/formInput': (context)=> TextFieldIslemleri(),
         '/formTextField': (context)=> FormTextField_(),
+        '/anotherFormObjectElement': (context)=> AnotherFormObjectElement(),
 //        '/listDetail/$clickForPosition':(context)=>ListDetail(clickForPosition),
       },
 
