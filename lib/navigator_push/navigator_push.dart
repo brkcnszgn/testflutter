@@ -162,6 +162,20 @@ class NavigatorPush extends StatelessWidget {
                 ),
               ),
               color: Colors.orange,
+            ),   RaisedButton(
+              onPressed: () {
+                // Bu navigator ozelligi geri tusuna basildiginda uygulama kapanir.
+                Navigator.pushNamed(context, "/originalDateTime"
+
+                );
+              },
+              child: Center(
+                child: Text(
+                  "Date time ekranina git",
+                  style: TextStyle(color: Colors.black87),
+                ),
+              ),
+              color: Colors.teal,
             ),
           ],
         ),

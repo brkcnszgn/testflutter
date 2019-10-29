@@ -4,6 +4,7 @@ import 'package:testflutter/listview/listview_sperator_builder.dart';
 
 import 'ListView_kullanici_dostu.dart';
 
+import 'date_time/flutter_original_date_time.dart';
 import 'form_islemleri/anotherFormObjectElement.dart';
 import 'form_islemleri/form_text_field.dart';
 import 'form_islemleri/input_field.dart';
@@ -30,6 +31,7 @@ void main() {
         '/formInput': (context)=> TextFieldIslemleri(),
         '/formTextField': (context)=> FormTextField_(),
         '/anotherFormObjectElement': (context)=> AnotherFormObjectElement(),
+        '/originalDateTime': (context)=> OriginalDateTimeFlutter(),
 //        '/listDetail/$clickForPosition':(context)=>ListDetail(clickForPosition),
       },
 
