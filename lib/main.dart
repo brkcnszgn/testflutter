@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/customScrollView/customScrollView.dart';
 import 'package:testflutter/listview/listview_sperator_builder.dart';
+import 'package:testflutter/stepper/flutter_stepper.dart';
 
 import 'ListView_kullanici_dostu.dart';
 
@@ -32,6 +33,7 @@ void main() {
         '/formTextField': (context)=> FormTextField_(),
         '/anotherFormObjectElement': (context)=> AnotherFormObjectElement(),
         '/originalDateTime': (context)=> OriginalDateTimeFlutter(),
+        '/stepperFlutter': (context)=> StepperForFlutter(),
 //        '/listDetail/$clickForPosition':(context)=>ListDetail(clickForPosition),
       },
 

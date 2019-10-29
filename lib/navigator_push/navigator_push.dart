@@ -162,7 +162,8 @@ class NavigatorPush extends StatelessWidget {
                 ),
               ),
               color: Colors.orange,
-            ),   RaisedButton(
+            ),
+            RaisedButton(
               onPressed: () {
                 // Bu navigator ozelligi geri tusuna basildiginda uygulama kapanir.
                 Navigator.pushNamed(context, "/originalDateTime"
@@ -172,6 +173,20 @@ class NavigatorPush extends StatelessWidget {
               child: Center(
                 child: Text(
                   "Date time ekranina git",
+                  style: TextStyle(color: Colors.black87),
+                ),
+              ),
+              color: Colors.teal,
+            ),  RaisedButton(
+              onPressed: () {
+                // Bu navigator ozelligi geri tusuna basildiginda uygulama kapanir.
+                Navigator.pushNamed(context, "/stepperFlutter"
+
+                );
+              },
+              child: Center(
+                child: Text(
+                  "Stepper  ekranina git",
                   style: TextStyle(color: Colors.black87),
                 ),
               ),
