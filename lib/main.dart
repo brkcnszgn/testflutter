@@ -12,6 +12,7 @@ import 'form_islemleri/input_field.dart';
 import 'girdView/grid_view.dart';
 import 'listView.dart';
 import 'navigator_push/navigator_push.dart';
+import 'not_hesaplama/not_hesap.dart';
 
 void main() {
   int clickForPosition;
@@ -68,7 +69,7 @@ void main() {
 
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.deepOrange),
-      home: NavigatorPush(),
+      home: NotHesapla(),
     ),
   );
 }
